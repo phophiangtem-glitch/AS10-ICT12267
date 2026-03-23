@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lab10 68025649 Phophiang Temchotchaya</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- INTERNAL CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      background-color: #FFF7FB;
+    }
+
+    /* HEADER */
+    #headerInner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #F8DDE8;
+      border-bottom: 2px solid #E9AFCB;
+    }
+
+    #logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    #logo h3 {
+      margin-top: 5px;
+      font-size: 18px;
+      color: #A86C82;
+    }
+
+    /* NAV */
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #A86C82;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #E9AFCB;
+    }
+
+    /* BUTTON */
+    .button {
+      background-color: #E9AFCB;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #D78CB8;
+    }
+
+    /* CONTENT LAYOUT */
+    #contents {
+      width: 1200px;
+      margin: 50px auto 100px;
+      display: flex;
+      gap: 50px;
+    }
+
+    /* MENU AREA */
+    #menu {
+      width: 70%;
+    }
+
+    #menu h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #menu ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    #menu li {
+      width: 30%;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #menu img {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    #menu figcaption {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #A86C82;
+    }
+
+    #menu .new::before {
+      content: "NEW";
+      color: white;
+      background-color: #E9AFCB;
+      padding: 10px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+
+    #menu li:hover {
+      transform: scale(1.05);
+    }
+
+    /* INFO BOX */
+    #info {
+      width: 28%;
+      background-color: #FBE3EF;
+      border: 1px solid #E9AFCB;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    #info ul {
+      margin-top: 20px;
+    }
+
+    #info li {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #E9AFCB;
+      line-height: 1.5;
+    }
+
+    #info span {
+      color: #A86C82;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #A86C82;
+      padding: 20px 0;
+      color: white;
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #FFD0EA;
+    }
+
+    #footerInner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    #footerInner ul {
+      display: flex;
+    }
+
+    #footerInner li {
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    /* CAROUSEL */
+    .carousel-item {
+      height: 450px;
+    }
+
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .carousel-caption h1 {
+      color: white;
+      font-size: 40px;
+      background: rgba(233,175,203,0.45);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    .carousel-indicators button {
+      background-color: #E9AFCB !important;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(92%) sepia(12%) saturate(320%) hue-rotate(290deg);
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <div id="headerInner">
+    <div id="logo">
+      <a href="#">
+        <img src="https://images.squarespace-cdn.com/content/v1/6670add926f2a64cd00fb0e7/d2f9b9c1-ab9c-4fe2-a793-d6a8634ac920/character+chii.png" alt="">
+      </a>
+      <h3>Chiikawa</h3>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Access</a></li>
+        <li><a href="#" class="button">Reservation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Carousel Section -->
+<section class="container-fluid p-0">
+
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="https://i.pinimg.com/736x/39/4f/db/394fdb8e67822439937b92170015aee8.jpg" class="d-block w-100" alt="">
+        <div class="carousel-caption">
+          <h1>GOOD COFFEE, GOOD MOOD</h1>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://i.pinimg.com/1200x/b5/95/9f/b5959f6657bcf203ebb656131de4101a.jpg" class="d-block w-100" alt="">
+        <div class="carousel-caption">
+          <h1>HAPPINESS STARTS WITH A CUP OF COFFEE</h1>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://i.pinimg.com/1200x/07/7b/e4/077be47cdff3c7dc30dcb8b5d6f2096f.jpg" class="d-block w-100" alt="">
+        <div class="carousel-caption">
+          <h1>SIP, RELAX, AND ENJOY THE MOMENT</h1>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</section>
+
+<main>
+  <div id="contents">
+
+    <section id="menu">
+      <h2>Menu</h2>
+      <ul>
+        <li class="new">
+          <a href="#">
+            <figure><img src="https://i.pinimg.com/736x/07/39/f2/0739f236b3cd26484568cd06703403e5.jpg" alt="">
+              <figcaption>Herbal Tea</figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <figure><img src="https://i.pinimg.com/736x/c7/26/52/c726527a100ec70144a8ac6096efb2a0.jpg" alt="">
+              <figcaption>Today's Coffee</figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <figure><img src="https://i.pinimg.com/1200x/e9/c6/12/e9c6128b716dc6b9e80ad9ecc4960a86.jpg" alt="">
+              <figcaption>Cappuccino</figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <figure><img src="https://i.pinimg.com/736x/39/48/fb/3948fba6469816b2edf0a356f0786169.jpg" alt="">
+              <figcaption>Organic Bread</figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li class="new">
+          <a href="#">
+            <figure><img src="https://i.pinimg.com/736x/72/ec/28/72ec2889f3ba4f3177ef121afeb52e33.jpg" alt="">
+              <figcaption>Fruit Yogurt</figcaption>
+            </figure>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <figure><img src="https://i.pinimg.com/736x/2b/4c/8b/2b4c8bcbfa17611e425edf241af6a56e.jpg" alt="">
+              <figcaption>Takeout</figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <aside id="info">
+      <h2>Information</h2>
+      <ul>
+        <li>
+          <span>2026.02.01</span>
+          <p>เปิดตัวเมนูใหม่ “Strawberry Mochi Latte” ประจำฤดูใบไม้ผลิ 🍓🌸</p>
+        </li>
+        <li>
+          <span>2026.01.28</span>
+          <p>เพิ่มโซนถ่ายรูปธีม Chiikawa พร้อมพร็อพสุดคิ้วท์ 💗✨</p>
+        </li>
+        <li>
+          <span>2026.01.20</span>
+          <p>โปรโมชั่นพิเศษ! ซื้อเครื่องดื่มครบ 2 แก้ว รับสติ๊กเกอร์ลาย Chiikawa ฟรี 1 ชิ้น 🎁</p>
+        </li>
+        <li>
+          <span>2026.01.10</span>
+          <p>อัปเดตเวลาเปิด–ปิดใหม่ 10:00–21:00 น. ทุกวัน 🕒</p>
+        </li>
+        <li>
+          <span>2026.01.01</span>
+          <p>Happy New Year 2024! แจกคูปองส่วนลด 10% ให้ลูกค้าทุกท่าน 🎉</p>
+        </li>
+      </ul>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  <div id="footerInner">
+    <p>68025649 &copy; Phophiang Temchotchaya</p>
+    <ul>
+      <li><a href="#">Access</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Company Profile</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
