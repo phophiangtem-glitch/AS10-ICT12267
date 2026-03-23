@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #FFF7FB; /* 🌸 pastel pink */
+}
+
+/* HEADER */
+#headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #F8DDE8; 
+  border-bottom: 2px solid #E9AFCB;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#logo img {
+  height: 60px;
+  width: auto;
+}
+
+#logo h3 {
+  margin-top: 5px;
+  font-size: 18px;
+  color: #A86C82;
+}
+
+/* NAV */
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #A86C82;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #E9AFCB;
+}
+
+/* BUTTON */
+.button {
+  background-color: #E9AFCB;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #D78CB8;
+}
+
+/* MAIN PHOTO */
+#mainPhoto {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  color: #fff;
+  font-size: 3em;
+  text-shadow: 1px 1px 5px #333;
+  padding: 100px 15%;
+}
+
+/* CONTENT LAYOUT */
+#contents {
+  width: 1200px;
+  margin: 50px auto 100px;
+  display: flex;
+  gap: 50px;
+}
+
+/* MENU AREA */
+#menu {
+  width: 70%;
+}
+
+#menu h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#menu li {
+  width: 30%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#menu figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #A86C82;
+}
+
+#menu .new::before {
+  content: "NEW";
+  color: white;
+  background-color: #E9AFCB;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+#menu li:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE MENU */
+@media screen and (max-width: 768px) {
+  #menu li {
+    width: 45%;
+  }
+}
+
+/* INFO BOX */
+#info {
+  width: 28%;
+  background-color: #FBE3EF;
+  border: 1px solid #E9AFCB;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#info ul {
+  margin-top: 20px;
+}
+
+#info li {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #E9AFCB;
+  line-height: 1.5;
+}
+
+#info span {
+  color: #A86C82;
+  font-weight: bold;
+}
+
+/* INFO MOBILE */
+@media screen and (max-width: 768px) {
+  #info {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* FOOTER */
+footer {
+  background-color: #A86C82;
+  padding: 20px 0;
+  color: white;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #FFD0EA;
+}
+
+#footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+#footerInner ul {
+  display: flex;
+}
+
+#footerInner li {
+  margin-left: 20px;
+  background-image: url('images/arrow.jpg');
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 20px;
+}
+
+/* FOOTER MOBILE */
+@media screen and (max-width: 768px) {
+  #footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #footerInner ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  #footerInner li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* CAROUSEL */
+.carousel-item {
+  height: 450px;
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption h1 {
+  color: white;
+  font-size: 40px;
+  background: rgba(233,175,203,0.45);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* INDICATORS */
+.carousel-indicators button {
+  background-color: #E9AFCB !important;
+}
+
+/* ARROWS */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(92%) sepia(12%) saturate(320%) hue-rotate(290deg);
+}
